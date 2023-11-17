@@ -1,13 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import nosotros from "../img/nosotros.jpg";
+import { Image } from "astro:assets";
 ---
 
-<Layout title="Nosotros" description='Página de tienda de instrumentos musicales, guitarras, cursos, blog y más'>
-	<main class="contenedor">
-		<h1 class="heading">Nosotros</h1>
-	</main>
+<Layout
+  title="Nosotros"
+  description="Página de tienda de instrumentos musicales, guitarras, cursos, blog y más"
+>
+  <main class="contenedor">
+    <h1 class="heading">Nosotros</h1>
+
+    <div class="contenido">
+      <Image src={nosotros} alt="Imagen sobre nosotros" />
+
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          facilisis sapien id mollis commodo. Morbi lacinia lorem elit, eu
+          ultricies mauris iaculis a. Nam cursus augue blandit enim eleifend,
+          nec semper quam ullamcorper. Curabitur congue, augue eget dictum
+          ullamcorper, nisl nibh consectetur ipsum, ac rhoncus quam ante a eros.
+          Nam bibendum magna eget facilisis pellentesque. Ut sed fermentum
+          ligula. Phasellus quis nunc porta, malesuada nunc et, consequat
+          turpis.
+        </p>
+        <p>
+          Etiam aliquet orci mi, tincidunt fringilla dolor luctus a. Nullam
+          suscipit congue nunc pharetra tempor. Aenean varius pulvinar ligula,
+          non finibus ante posuere in. Aenean malesuada, orci quis sodales
+          molestie, leo quam porttitor neque, ut mollis urna nulla vel neque.
+          Fusce tristique libero vel sodales sollicitudin. Sed eu nibh egestas,
+          vestibulum tortor sit amet, convallis lacus. Nam est magna, gravida
+          facilisis justo eget, suscipit semper elit. Curabitur consectetur
+          ipsum non nunc cursus, a fermentum velit feugiat.
+        </p>
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
-	
+    .contenido {
+    display: grid;
+    gap: 4rem;
+}
+@media (min-width: 768px) {
+    .contenido {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+}
 </style>
